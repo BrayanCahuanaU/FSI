@@ -1,16 +1,19 @@
+html{
+    height: 100%;
+}
+
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: block;    
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    vertical-align: middle;
+    align-items: center; /* Centrar verticalmente */
+    height: 99vh;
 }
 
 table{
     border-style: dashed;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    vertical-align: middle;
-    align-self: center;
+    
 }
 table th{
     background-color: rgb(181, 143, 143);
