@@ -1,0 +1,38 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;    
+    text-align: center;
+}
+
+table{
+    border-style: dashed;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    align-self: center;
+}
+table th{
+    background-color: rgb(181, 143, 143);
+}
+form{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+label{
+    font-size: 18px;
+    display: block;
+    text-align: justify;
+}
+input{
+    display: block;
+    margin: 5px 0pc;
+}
+.btn{
+    background-color: rgb(31, 161, 31);
+    border-radius: 5px;
+    border-style: none;
+    color: whitesmoke;
+    padding: 0.7pc 2pc;
+}

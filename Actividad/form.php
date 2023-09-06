@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Form</title>
+<link rel="stylesheet" href="styles.css">
+<title>Form</title>
+<head> 
+    <?php
+        include 'conexion.php';        
+        // Obtener los datos de la tabla
+        $sql = "SELECT * FROM libros";
+        $result = $conn->query($sql);
+    ?>       
 </head>
 <body>
+    <table>
+        <tr>
+            <th>NombreLibro</th>
+            <th>Autor</th>
+            <th>ISBN</th>
+            <th>Descripcion</th>
+            <th>Eliminar</th>
+            <th>Modificar</th>
+        </tr>
+        <?php
+        if ($result->num_rows > 0) {
+            // Mostrar los datos en una tabla
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>".$row["NombreLibro"]."</td>";
+                echo "<td>".$row["Autor"]."</td>";
+                echo "<td>".$row["ISBN"]."</td>";
+                echo "<td>".$row["Descripcion"]."</td>";
+                // Corrección en los enlaces de eliminar y modificar
+                echo "<td><a href='formEliminar.php?id=".$row["ISBN"]."'>Eliminar</a></td>";
+                echo "<td><a href='formModificar.php?id=".$row["ISBN"]."'>Modificar</a></td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "No se encontraron registros.";
+        }
 
-<?php
-// Conectar a la base de datos
-$server = "localhost";
-$dbname = "login";
-$user = "root";
-$password = "";
-
-$conn = new mysqli($server, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Error al conectar a la base de datos: " . $conn->connect_error);
-}
-
-// Obtener los datos de la tabla
-$sql = "SELECT * FROM libros";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // Mostrar los datos en una tabla
-    echo "<table>";
-    echo "<tr><th>NombreLibro</th><th>Autor</th><th>ISBN</th><th>Descripcion</th><th>Eliminar</th><th>Modificar</th></tr>";
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>".$row["NombreLibro"]."</td>";
-        echo "<td>".$row["Autor"]."</td>";
-        echo "<td>".$row["ISBN"]."</td>";
-        echo "<td>".$row["Descripcion"]."</td>";
-        echo "<td><a href='eliminar.php?id=".$row["id"]."'>Eliminar</a></td>";
-        echo "<td><a href='modificar.php?id=".$row["id"]."'>Modificar</a></td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-} else {
-    echo "No se encontraron registros.";
-}
-
-$conn->close();
-?>
-
+        ?>
+    </table>
 </body>
 </html>
