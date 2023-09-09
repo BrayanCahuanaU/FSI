@@ -4,16 +4,28 @@ html{
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
+    display: block;
+    text-align: center;
     justify-content: center; /* Centrar horizontalmente */
-    vertical-align: middle;
     align-items: center; /* Centrar verticalmente */
-    height: 99vh;
+}
+
+.contenedor{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    height: 90vh;
 }
 
 table{
     border-style: dashed;
-    
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
 }
 table th{
     background-color: rgb(181, 143, 143);
@@ -30,12 +42,22 @@ label{
 }
 input{
     display: block;
-    margin: 5px 0pc;
+    margin: 5px 0px;
+    align-content: center;
+    background-color: rgba(128, 128, 128, 0.146);
+    border-style: none;
+    border-radius: 5px;
+    padding: 7px;
+    outline: none;
 }
 .btn{
+    display: flex;
+    justify-content: center;
     background-color: rgb(31, 161, 31);
     border-radius: 5px;
     border-style: none;
     color: whitesmoke;
     padding: 0.7pc 2pc;
+    margin-top: 10px;
+    width: 100%;
 }

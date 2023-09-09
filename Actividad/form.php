@@ -11,6 +11,7 @@
     ?>       
 </head>
 <body>
+    <div class="contenedor">
     <table>
         <tr>
             <th>NombreLibro</th>
@@ -37,8 +38,8 @@
         } else {
             echo "No se encontraron registros.";
         }
-
         ?>
     </table>
+    </div>
 </body>
 </html>
