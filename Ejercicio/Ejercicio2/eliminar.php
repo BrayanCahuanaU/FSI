@@ -2,7 +2,7 @@
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
     // Realizar la conexión a la base de datos (reemplaza con tus propias credenciales)
-    $conexion = new mysqli("localhost", "tu_usuario", "tu_contraseña", "tu_base_de_datos");
+    $conexion = new mysqli("sql311.infinityfree.com", "if0_34998991", "EfYFf1cXXfhg", "if0_34998991_usuarios_crud");
 
     if ($conexion->connect_error) {
         die("Conexión fallida: " . $conexion->connect_error);

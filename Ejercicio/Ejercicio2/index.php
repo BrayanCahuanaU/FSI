@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos (reemplaza con tus propias credenciales)
-$conexion = new mysqli("localhost", "root", "", "tu_base_de_datos");
+$conexion = new mysqli("sql311.infinityfree.com", "if0_34998991", "EfYFf1cXXfhg", "if0_34998991_usuarios_crud");
 
 if ($conexion->connect_error) {
     die("Conexión fallida: " . $conexion->connect_error);

@@ -3,17 +3,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar y obtener datos del formulario
     $nombre = $_POST["nombre"];
     $correo = $_POST["correo"];
-    $contrasena = $_POST["contrasena"];
+    $contraseña = $_POST["contraseña"];
 
     // Realizar la conexión a la base de datos (reemplaza con tus propias credenciales)
-    $conexion = new mysqli("localhost", "tu_usuario", "tu_contraseña", "tu_base_de_datos");
+    $conexion = new mysqli("sql311.infinityfree.com", "if0_34998991", "EfYFf1cXXfhg", "if0_34998991_usuarios_crud");
 
     if ($conexion->connect_error) {
         die("Conexión fallida: " . $conexion->connect_error);
     }
 
     // Insertar el nuevo usuario en la base de datos
-    $sql = "INSERT INTO usuarios (nombre, correo, contrasena) VALUES ('$nombre', '$correo', '$contrasena')";
+    $sql = "INSERT INTO usuarios (nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
 
     if ($conexion->query($sql) === TRUE) {
         header("Location: index.php"); // Redirigir a la página principal después de crear el usuario
@@ -43,8 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="correo">Correo:</label>
         <input type="email" id="correo" name="correo" required><br>
         
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required><br>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" required><br>
         
         <button type="submit">Guardar</button>
     </form>

@@ -3,10 +3,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST["usuario"];
     $contrasena = $_POST["contrasena"];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "tu_base_de_datos";
+    $servername = "sql201.infinityfree.com";
+    $username = "if0_34998956";
+    $password = "vP90YoBJHk";
+    $dbname = "if0_34998956_usuarios";
 
     $conexion = new mysqli($servername, $username, $password, $dbname);
 
