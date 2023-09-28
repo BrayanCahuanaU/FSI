@@ -18,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = $conexion->query($sql);
 
     if ($resultado->num_rows == 1) {
-        header("Location: inicio.php");
+        echo "<p>".$row["nombre_usuario"]."</p>";
+        //boton para volver a la pagina de logueo
+        echo "<input type='submit'>";
         exit();
     } else {
         echo "Usuario o contraseña incorrectos.";
